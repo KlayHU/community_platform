@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class FirstController {
 
-    @GetMapping("/First")
-    public String First (@RequestParam(name = "name") String name , Model model){
-        model.addAttribute("name",name);
-        return "First";
+    @GetMapping("/")
+    public String First (){
+        return "index";
     }
 }
