@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @create: 2020/2/12 2:44
  **/
 @Controller
-public class FirstController {
+public class IndexController {
 
     @GetMapping("/")
     public String First (){
