@@ -11,7 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 /**
@@ -38,7 +39,7 @@ public class AuthorizeController {
     @GetMapping("/callback")
     public String callback(@RequestParam(name = "code") String code,
                            @RequestParam(name = "state") String state,
-                           HttpServletRequest request) {
+                           HttpServletResponse response) {
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setCode(code);
         accessTokenDTO.setRedirect_uri(redirectUri);
@@ -52,12 +53,14 @@ public class AuthorizeController {
             User user = new User();
             user.setAccount_id(String.valueOf(githubUser.getId()));
             user.setName(githubUser.getName());
-            user.setToken(UUID.randomUUID().toString());        //通过使用uuid的方式添加token
+            String token = UUID.randomUUID().toString();     //通过使用uuid的方式添加token
+            user.setToken(token);
             user.setGmt_create(System.currentTimeMillis());
             user.setGmt_modify(user.getGmt_create());
             userMapper.insert(user);
+            response.addCookie(new Cookie("token",token));      //写一个k-v(token)放cookie里
             //登录成功，写cookie和session
-            request.getSession().setAttribute("user", user); //把user对象放session里,即银行账户创建成功
+            //request.getSession().setAttribute("user", user); //把user对象放session里,即银行账户创建成功
             return "redirect:/";
         } else {
             //登录失败，返回重新登录
