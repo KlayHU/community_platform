@@ -15,9 +15,9 @@ public class User {
 
     private String token;
 
-    private long gmt_create;
+    private Long gmt_create;
 
-    private long gmt_modify;
+    private Long gmt_modify;
 
     public int getId() {
         return id;
