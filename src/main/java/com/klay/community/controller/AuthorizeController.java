@@ -57,6 +57,7 @@ public class AuthorizeController {
             user.setToken(token);
             user.setGmt_create(System.currentTimeMillis());
             user.setGmt_modify(user.getGmt_create());
+            user.setAvatar_url(githubUser.getAvatar_url());
             userMapper.insert(user);
             response.addCookie(new Cookie("token",token));      //写一个k-v(token)放cookie里
             //登录成功，写cookie和session
