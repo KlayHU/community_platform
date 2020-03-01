@@ -35,12 +35,12 @@
             <nav aria-label="Page navigation">
                 <ul class="pagination">
                     <li th:if="${pageination.hasFirstPage}">
-                        <a href="/?page=1" aria-label="">
+                        <a href="/?page=1" aria-label="toFirst">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
                     <li th:if="${pageination.hasPreviousPages}">
-                        <a th:href="@{/(page=${pageination.page - 1})}" aria-label="">
+                        <a th:href="@{/(page=${pageination.page - 1})}" aria-label="toPrevious">
                             <span aria-hidden="true">&lt;</span>
                         </a>
                     </li>
@@ -48,12 +48,12 @@
                         <a th:href="@{/(page=${page})}" th:text="${page}"></a>
                     </li>
                     <li th:if="${pageination.hasNextPage}">
-                        <a th:href="@{/(page=${pageination.page + 1})}" aria-label="">
+                        <a th:href="@{/(page=${pageination.page + 1})}" aria-label="toNext">
                         <span aria-hidden="true">&gt;</span>
                         </a>
                     </li>
                     <li th:if="${pageination.hasEndPage}" >
-                        <a th:href="@{/(page=${pageination.currentPage})}" aria-label="">
+                        <a th:href="@{/(page=${pageination.currentPage})}" aria-label="toLast">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
