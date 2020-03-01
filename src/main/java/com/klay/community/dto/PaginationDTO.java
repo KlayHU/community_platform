@@ -11,41 +11,48 @@ import java.util.List;
  * @create: 2020/2/28 20:21
  **/
 @Data
-public class PageDTO {
+public class PaginationDTO {
     private List<QuestionDTO> questions;
-    private boolean hasPreciousPages;      //判断是否有向前按钮
-    private boolean hasFirstPage;       //判断是否有第一页
-    private boolean hasNextPage;
-    private boolean hasEndPage;
-    private Integer currentPage;
+    private boolean hasPreviousPages;      //向前按钮
+    private boolean hasFirstPage;       //去首页按钮
+    private boolean hasNextPage;        //向后按钮
+    private boolean hasEndPage;         //去末页按钮
     private Integer page;       //第 页
     private List<Integer> pages = new ArrayList<>();      //当前分页条显示的页码数
+    private Integer currentPage;    //当前页码数
 
     public void setPagintion(Integer totalCount, Integer page, Integer limit) {
-        Integer totalPage;      //当前页码数
         if (totalCount % limit == 0) {
-            totalPage = totalCount / limit;
+            currentPage = totalCount / limit;
         } else {
-            totalPage = totalCount / limit + 1;
+            currentPage = totalCount / limit + 1;
         }
+
+        if (page < 1) {
+            page = 1;
+        }
+        if (page > currentPage) {
+            page = currentPage;
+        }
+        this.page = page;
 
         pages.add(page);
         for (int i = 1; i <= 3; i++) {
-            if (page - 1 > 0) {
-                pages.add(page - i, 0);
+            if (page - i > 0) {
+                pages.add(0, page - i);
             }
-            if (page + i <= totalCount) {
-                pages.add(page + 1);
+            if (page + i <= currentPage) {
+                pages.add(page + i);
             }
         }
         //是否展示上一页按钮
         if (page == 1) {
-            hasFirstPage = false;
+            hasPreviousPages = false;
         } else {
-            hasFirstPage = true;
+            hasPreviousPages = true;
         }
         //是否展示下一页按钮
-        if (page == totalPage) {
+        if (page == currentPage) {
             hasNextPage = false;
         } else {
             hasNextPage = true;
@@ -57,7 +64,7 @@ public class PageDTO {
             hasFirstPage = true;
         }
         //是否展示末页按钮
-        if (pages.contains(totalCount)) {
+        if (pages.contains(currentPage)) {
             hasEndPage = false;
         } else {
             hasEndPage = true;

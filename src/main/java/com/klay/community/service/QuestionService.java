@@ -1,5 +1,6 @@
 package com.klay.community.service;
 
+import com.klay.community.dto.PaginationDTO;
 import com.klay.community.dto.QuestionDTO;
 import com.klay.community.mapper.QuestionMapper;
 import com.klay.community.mapper.UserMapper;
@@ -25,15 +26,34 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 
-    public List<QuestionDTO> list() {
-        List<Question> questions = questionMapper.list();
+    public PaginationDTO list(Integer page, Integer limit) {
+
+        PaginationDTO paginationDTO = new PaginationDTO();
+        Integer currentPage = questionMapper.count();     //从列数拿到总数
+        paginationDTO. setPagintion(currentPage,page,limit);
+
+        if (page < 1) {
+            page = 1;
+        }
+        if (page > paginationDTO.getCurrentPage()) {
+            page = paginationDTO.getCurrentPage();
+        }
+
+
+        //分页
+        Integer pages = (page - 1) * limit;
+        List<Question> questions = questionMapper.list(pages, limit);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
+
         for (Question question : questions) {
             User user = userMapper.findById(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
-            BeanUtils.copyProperties(question,questionDTO);     //对象快速拷贝
+            BeanUtils.copyProperties(question, questionDTO);     //对象快速拷贝
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
-        }return questionDTOList;
+        }
+        paginationDTO.setQuestions(questionDTOList);
+
+        return paginationDTO;
     }
 }
