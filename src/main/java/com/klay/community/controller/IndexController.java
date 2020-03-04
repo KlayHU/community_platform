@@ -43,8 +43,8 @@ public class IndexController {
                     break;
                 }
             }
-        PaginationDTO pageination = questionService.list(page,limit);
-        model.addAttribute("pageination", pageination);
+        PaginationDTO pagination = questionService.list(page,limit);
+        model.addAttribute("pagination", pagination);
         return "index";
     }
 }
