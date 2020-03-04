@@ -27,19 +27,15 @@ public class QuestionService {
     private UserMapper userMapper;
 
     public PaginationDTO list(Integer page, Integer limit) {
-
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer currentPage = questionMapper.count();     //从列数拿到总数
         paginationDTO. setPagintion(currentPage,page,limit);
-
         if (page < 1) {
             page = 1;
         }
         if (page > paginationDTO.getCurrentPage()) {
             page = paginationDTO.getCurrentPage();
         }
-
-
         //分页
         Integer pages = (page - 1) * limit;
         List<Question> questions = questionMapper.list(pages, limit);
@@ -53,24 +49,19 @@ public class QuestionService {
             questionDTOList.add(questionDTO);
         }
         paginationDTO.setQuestions(questionDTOList);
-
         return paginationDTO;
     }
 
     public PaginationDTO list(Integer userId, Integer page, Integer limit) {
-
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer currentPage = questionMapper.countByUserId(userId);     //从列数拿到总数
         paginationDTO. setPagintion(currentPage,page,limit);
-
         if (page < 1) {
             page = 1;
         }
         if (page > paginationDTO.getCurrentPage()) {
             page = paginationDTO.getCurrentPage();
         }
-
-
         //分页
         Integer pages = (page - 1) * limit;
         List<Question> questions = questionMapper.listByUserId(userId,pages, limit);
@@ -84,7 +75,6 @@ public class QuestionService {
             questionDTOList.add(questionDTO);
         }
         paginationDTO.setQuestions(questionDTOList);
-
         return paginationDTO;
     }
 }

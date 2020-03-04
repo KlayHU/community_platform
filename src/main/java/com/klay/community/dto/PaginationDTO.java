@@ -27,7 +27,6 @@ public class PaginationDTO {
         } else {
             currentPage = totalCount / limit + 1;
         }
-
         if (page < 1) {
             page = 1;
         }
@@ -35,7 +34,6 @@ public class PaginationDTO {
             page = currentPage;
         }
         this.page = page;
-
         pages.add(page);
         for (int i = 1; i <= 3; i++) {
             if (page - i > 0) {
