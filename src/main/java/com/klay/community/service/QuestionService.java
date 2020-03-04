@@ -29,7 +29,7 @@ public class QuestionService {
     public PaginationDTO list(Integer page, Integer limit) {
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer currentPage = questionMapper.count();     //从列数拿到总数
-        paginationDTO. setPagintion(currentPage,page,limit);
+        paginationDTO. setPagination(currentPage,page,limit);
         if (page < 1) {
             page = 1;
         }
@@ -55,7 +55,7 @@ public class QuestionService {
     public PaginationDTO list(Integer userId, Integer page, Integer limit) {
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer currentPage = questionMapper.countByUserId(userId);     //从列数拿到总数
-        paginationDTO. setPagintion(currentPage,page,limit);
+        paginationDTO. setPagination(currentPage,page,limit);
         if (page < 1) {
             page = 1;
         }

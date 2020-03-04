@@ -1,7 +1,6 @@
 package com.klay.community.controller;
 
 import com.klay.community.mapper.QuestionMapper;
-import com.klay.community.mapper.UserMapper;
 import com.klay.community.model.Question;
 import com.klay.community.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -24,8 +22,6 @@ public class PublishController {
 
     @Autowired
     private QuestionMapper questionMapper;
-    @Autowired
-    private UserMapper userMapper;
 
     @GetMapping("/publish")
     public String publish() {
@@ -38,7 +34,6 @@ public class PublishController {
                             @RequestParam(value = "tag",required = false) String tag,
                             HttpServletRequest request,
                             Model model) {
-
         model.addAttribute("title",title);
         model.addAttribute("description",description);
         model.addAttribute("tag",tag);
@@ -53,23 +48,8 @@ public class PublishController {
             model.addAttribute("Error","标签不能为空");
             return "publish";
         }
-
-
-        User user = null;
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("token")) {
-                    String token = cookie.getValue();
-                    user = userMapper.findByToken(token);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }
-                    break;
-                }
-            }
-        }
-            if (user == null) {
+        User user =(User)request.getSession().getAttribute("user");
+        if (user == null) {
                 model.addAttribute("Error", "请先登录！");
                 return "publish";
             }

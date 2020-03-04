@@ -21,7 +21,7 @@ public class PaginationDTO {
     private List<Integer> pages = new ArrayList<>();      //当前分页条显示的页码数
     private Integer currentPage;    //当前页码数
 
-    public void setPagintion(Integer totalCount, Integer page, Integer limit) {
+    public void setPagination(Integer totalCount, Integer page, Integer limit) {
         if (totalCount % limit == 0) {
             currentPage = totalCount / limit;
         } else {
