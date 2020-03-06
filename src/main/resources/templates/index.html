@@ -3,10 +3,10 @@
 <head>
     <title>Klay的论坛社区</title>
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/community.css">
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/community.css">
+    <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="application/javascript"></script>
 </head>
 <body>
 <div th:insert="~{navigation :: nav}"></div>
@@ -22,15 +22,17 @@
                              th:src="${question.user.avatar_url}">
                     </a>
                 </div>
-                <div class="media-body">
-                    <h4 class="media-heading" th:text="${question.title}"></h4>
-                    <span th:text="${question.description}"></span><br>
-                    <span class="desc-text"><span th:text="${question.comment_count}"></span>个回复 ·
-                            <span th:text="${question.view_count}"></span>次浏览 ·
-                            <span th:text="${question.follow_count}"></span>个关注 ·
-                            <span th:text="${#dates.format(question.gmt_create,'yyyy-MM-dd HH:mm:ss')}"></span>
-                        </span>
-                </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <a th:href="@{'/question/'+${question.id}}" th:text="${question.title}"></a>
+                        </h4>
+                        <span th:text="${question.description}"></span><br>
+                        <span class="desc-text"><span th:text="${question.comment_count}"></span>个回复 ·
+                                <span th:text="${question.view_count}"></span>次浏览 ·
+                                <span th:text="${question.follow_count}"></span>个关注 ·
+                                <span th:text="${#dates.format(question.gmt_create,'yyyy-MM-dd HH:mm:ss')}"></span>
+                            </span>
+                    </div>
             </div>
             <nav aria-label="Page navigation">
                 <ul class="pagination">

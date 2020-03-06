@@ -1,9 +1,12 @@
 body{
-    background-color: #efefef;
+    background-color: #ebebeb;
 }
 .main{
     background-color: white;
     margin: 35px;
+}
+.head{
+    background-color: #dbeff9;
 }
 .btn-publish{
     float: right;
@@ -20,4 +23,8 @@ body{
 }
 .profile .section{
     margin-top: 25px;
+}
+.community-menu{
+   color: #999;
+    font-size: px;
 }
