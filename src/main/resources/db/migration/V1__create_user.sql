@@ -8,6 +8,7 @@ create table user
     token      varchar(255)              null,
     gmt_create bigint                    null,
     gmt_modify bigint                    null,
-    bio        varchar(255)              null
+    bio        varchar(255)              null,
+    avatar_url varchar (255)             null
 )
     charset = latin1;

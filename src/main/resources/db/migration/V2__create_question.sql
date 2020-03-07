@@ -11,6 +11,6 @@ create table question
     comment_count int default 0 null,
     view_count    int default 0 null,
     follow_count  int default 0 null,
-    tags          varchar(255)  null
+    tag          varchar(255)  null
 );
 

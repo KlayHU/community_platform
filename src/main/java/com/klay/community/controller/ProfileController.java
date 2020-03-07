@@ -35,13 +35,12 @@ public class ProfileController {
         if("questions".equals(action)){
             model.addAttribute("section","questions");
             model.addAttribute("sectionName","我的问题");
-            PaginationDTO paginationDTO = questionService.list(user.getId(), page, limit);
-            model.addAttribute("pagination", paginationDTO);
-            return "profile";
         }else if("replies".equals(action)) {
             model.addAttribute("section", "replies");
             model.addAttribute("sectionName", "最新回复");
         }
+        PaginationDTO paginationDTO = questionService.list(user.getId(), page, limit);
+        model.addAttribute("pagination", paginationDTO);
         return "profile";
     }
 }

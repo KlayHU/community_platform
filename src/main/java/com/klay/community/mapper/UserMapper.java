@@ -1,10 +1,7 @@
 package com.klay.community.mapper;
 
 import com.klay.community.model.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 /**
  * @description:
@@ -14,7 +11,7 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface UserMapper {
     @Insert("insert into user(account_id,name,token,gmt_create,gmt_modify,avatar_url) values (#{account_id},#{name},#{token},#{gmt_create},#{gmt_modify},#{avatar_url})")
-    public void insert(User user);
+    void insert(User user);
 
 
     @Select("select * from user where token = #{token}")
@@ -22,4 +19,10 @@ public interface UserMapper {
 
     @Select("select * from user where id = #{id}")
     User findById(@Param("id") Integer id);
+
+    @Select("select * from user where account_id = #{account_id}")
+    User findByAccountId(@Param("account_id") String account_id);
+
+    @Update("update user set name = #{name},token = #{token},avatar_url = #{avatar_url},gmt_modify = #{gmt_modify} where account_id = #{account_id}")
+    void update(User dbUser);
 }

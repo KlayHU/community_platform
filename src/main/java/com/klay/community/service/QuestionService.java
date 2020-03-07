@@ -38,6 +38,9 @@ public class QuestionService {
         }
         //分页
         Integer pages = (page - 1) * limit;
+        if(pages<0){
+            pages=0;
+        }
         List<Question> questions = questionMapper.list(pages, limit);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
@@ -63,7 +66,9 @@ public class QuestionService {
             page = paginationDTO.getCurrentPage();
         }
         //分页
+
         Integer pages = (page - 1) * limit;
+
         List<Question> questions = questionMapper.listByUserId(userId,pages, limit);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
