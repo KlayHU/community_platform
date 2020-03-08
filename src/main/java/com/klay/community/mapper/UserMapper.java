@@ -1,28 +1,30 @@
 package com.klay.community.mapper;
 
 import com.klay.community.model.User;
-import org.apache.ibatis.annotations.*;
+import com.klay.community.model.UserExample;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * @description:
- * @author: KlayHu
- * @create: 2020/2/15 19:37
- **/
-@Mapper
 public interface UserMapper {
-    @Insert("insert into user(account_id,name,token,gmt_create,gmt_modify,avatar_url) values (#{account_id},#{name},#{token},#{gmt_create},#{gmt_modify},#{avatar_url})")
-    void insert(User user);
+    long countByExample(UserExample example);
 
+    int deleteByExample(UserExample example);
 
-    @Select("select * from user where token = #{token}")
-    User findByToken(@Param("token") String token);
+    int deleteByPrimaryKey(Integer id);
 
-    @Select("select * from user where id = #{id}")
-    User findById(@Param("id") Integer id);
+    int insert(User record);
 
-    @Select("select * from user where account_id = #{account_id}")
-    User findByAccountId(@Param("account_id") String account_id);
+    int insertSelective(User record);
 
-    @Update("update user set name = #{name},token = #{token},avatar_url = #{avatar_url},gmt_modify = #{gmt_modify} where account_id = #{account_id}")
-    void update(User dbUser);
+    List<User> selectByExample(UserExample example);
+
+    User selectByPrimaryKey(Integer id);
+
+    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 }
