@@ -1,7 +1,6 @@
 package com.klay.community.controller;
 
 import com.klay.community.dto.QuestionDTO;
-import com.klay.community.mapper.QuestionMapper;
 import com.klay.community.model.Question;
 import com.klay.community.model.User;
 import com.klay.community.service.QuestionService;

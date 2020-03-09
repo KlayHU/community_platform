@@ -13,12 +13,12 @@ public class QuestionDTO {
     private Integer id;
     private String title;
     private String description;
-    private Long gmt_create;
-    private Long gmt_modify;
+    private Long gmtCreate;
+    private Long gmtModify;
     private Integer creator;
-    private Integer comment_count;
-    private Integer view_count;
-    private Integer follow_count;
+    private Integer commentCount;
+    private Integer viewCount;
+    private Integer followCount;
     private String tag;
     private User user;
 }

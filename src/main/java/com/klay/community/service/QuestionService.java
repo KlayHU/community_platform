@@ -5,7 +5,9 @@ import com.klay.community.dto.QuestionDTO;
 import com.klay.community.mapper.QuestionMapper;
 import com.klay.community.mapper.UserMapper;
 import com.klay.community.model.Question;
+import com.klay.community.model.QuestionExample;
 import com.klay.community.model.User;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +30,9 @@ public class QuestionService {
 
     public PaginationDTO list(Integer page, Integer limit) {
         PaginationDTO paginationDTO = new PaginationDTO();
-        Integer currentPage = questionMapper.count();     //从列数拿到总数
+
+        Integer currentPage =(int)questionMapper.countByExample(new QuestionExample());     //从列数拿到总数
+
         paginationDTO. setPagination(currentPage,page,limit);
         if (page < 1) {
             page = 1;
@@ -41,7 +45,7 @@ public class QuestionService {
         if(pages<0){
             pages=0;
         }
-        List<Question> questions = questionMapper.list(pages, limit);
+        List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(new QuestionExample(), new RowBounds(pages,limit));
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
         for (Question question : questions) {
@@ -57,7 +61,10 @@ public class QuestionService {
 
     public PaginationDTO list(Integer userId, Integer page, Integer limit) {
         PaginationDTO paginationDTO = new PaginationDTO();
-        Integer currentPage = questionMapper.countByUserId(userId);     //从列数拿到总数
+
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.createCriteria().andCreatorEqualTo(userId);
+        Integer currentPage =(int)questionMapper.countByExample(questionExample);     //从列数拿到总数
         paginationDTO. setPagination(currentPage,page,limit);
         if (page < 1) {
             page = 1;
@@ -69,7 +76,10 @@ public class QuestionService {
 
         Integer pages = (page - 1) * limit;
 
-        List<Question> questions = questionMapper.listByUserId(userId,pages, limit);
+        QuestionExample example = new QuestionExample();
+        example.createCriteria().andCreatorEqualTo(userId);
+        List<Question> questions = questionMapper.selectByExampleWithRowbounds(example, new RowBounds(pages,limit));
+
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
         for (Question question : questions) {
@@ -84,7 +94,7 @@ public class QuestionService {
     }
 
     public QuestionDTO getQuestionById(Integer id) {
-        Question question = questionMapper.getQuestionById(id);
+        Question question = questionMapper.selectByPrimaryKey(id);
         QuestionDTO questionDTO = new QuestionDTO();
         BeanUtils.copyProperties(question,questionDTO);
         User user = userMapper.selectByPrimaryKey(question.getCreator());
@@ -95,13 +105,19 @@ public class QuestionService {
     public void createOrupdate(Question question) {
         if(question.getId() == null){
             //创建问题
-            question.setGmt_create(System.currentTimeMillis());
-            question.setGmt_modify(question.getGmt_create());
-            questionMapper.create(question);
+            question.setGmtCreate(System.currentTimeMillis());
+            question.setGmtModify(question.getGmtCreate());
+            questionMapper.insert(question);
         }else{
             //提交编辑问题
-            question.setGmt_create(System.currentTimeMillis());
-            questionMapper.update(question);
+            Question questionUpdate = new Question();
+            questionUpdate.setGmtModify(System.currentTimeMillis());
+            questionUpdate.setTitle(question.getTitle());
+            questionUpdate.setDescription(question.getDescription());
+            questionUpdate.setTag(question.getTag());
+            QuestionExample example = new QuestionExample();
+            example.createCriteria().andIdEqualTo(question.getId());
+            questionMapper.updateByExampleSelective(questionUpdate, example);
         }
     }
 }
