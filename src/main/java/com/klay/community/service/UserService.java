@@ -22,26 +22,24 @@ public class UserService {
 
     public void createOrupdate(User user) {
         UserExample userExample = new UserExample();
-        //sql字段拼接
-        userExample.createCriteria().andAccountIdEqualTo(user.getAccount_id());
+        userExample.createCriteria().andAccountIdEqualTo(user.getAccountId());
         List<User> users = userMapper.selectByExample(userExample);
         if(users.size() == 0){
             //插入
-            user.setGmt_create(System.currentTimeMillis());
-            user.setGmt_modify(user.getGmt_create());
+            user.setGmtCreate(System.currentTimeMillis());
+            user.setGmtModify(user.getGmtCreate());
             userMapper.insert(user);
         }else{
             //更新
             User dbUser = users.get(0);
-            User userUpdate = new User();
-            userUpdate.setGmt_modify(System.currentTimeMillis());
-            userUpdate.setAvatar_url(user.getAvatar_url());
-            userUpdate.setName(user.getName());
-            userUpdate.setToken(user.getToken());
-            UserExample updateExample = new UserExample();
-            //sql字段拼接
-            updateExample.createCriteria().andIdEqualTo(userUpdate.getId());
-            userMapper.updateByExampleSelective(userUpdate, updateExample);
+            User updateUser = new User();
+            updateUser.setGmtModify(System.currentTimeMillis());
+            updateUser.setAvatarUrl(user.getAvatarUrl());
+            updateUser.setName(user.getName());
+            updateUser.setToken(user.getToken());
+            UserExample example = new UserExample();
+            example.createCriteria().andIdEqualTo(dbUser.getId());
+            userMapper.updateByExampleSelective(updateUser, example);
         }
     }
 }

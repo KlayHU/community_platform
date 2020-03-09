@@ -32,11 +32,10 @@ public class SessionInterceptor implements HandlerInterceptor {
                 if (cookie.getName().equals("token")) {
                     String token = cookie.getValue();
                     UserExample userExample = new UserExample();
-                    //拼接sql
                     userExample.createCriteria().andTokenEqualTo(token);
-                    List<User> users = userMapper.selectByExample(userExample);
-                    if (users.size() != 0) {
-                        request.getSession().setAttribute("user", users.get(0));
+                    List<User> user = userMapper.selectByExample(userExample);
+                    if (user.get(0) != null) {
+                        request.getSession().setAttribute("user", user.get(0));
                     }
                     break;
                 }

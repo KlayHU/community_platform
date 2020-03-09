@@ -52,11 +52,11 @@ public class AuthorizeController {
 //      System.out.println(user.getName()+"   登录");
         if (githubUser != null && githubUser.getId() != null) {
             User user = new User();
-            user.setAccount_id(String.valueOf(githubUser.getId()));
+            user.setAccountId(String.valueOf(githubUser.getId()));
             user.setName(githubUser.getName());
             String token = UUID.randomUUID().toString();     //通过使用uuid的方式添加token
             user.setToken(token);
-            user.setAvatar_url(githubUser.getAvatar_url());
+            user.setAvatarUrl(githubUser.getAvatar_url());
             userService.createOrupdate(user);
             //userMapper.insert(user);
             response.addCookie(new Cookie("token",token));      //写一个k-v(token)放cookie里
