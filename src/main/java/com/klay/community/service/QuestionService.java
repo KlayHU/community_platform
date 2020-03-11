@@ -2,6 +2,8 @@ package com.klay.community.service;
 
 import com.klay.community.dto.PaginationDTO;
 import com.klay.community.dto.QuestionDTO;
+import com.klay.community.exception.CustomizeErrorCodeException;
+import com.klay.community.exception.CustomizeException;
 import com.klay.community.mapper.QuestionMapper;
 import com.klay.community.mapper.UserMapper;
 import com.klay.community.model.Question;
@@ -95,6 +97,9 @@ public class QuestionService {
 
     public QuestionDTO getQuestionById(Integer id) {
         Question question = questionMapper.selectByPrimaryKey(id);
+        if (question == null){
+            throw new CustomizeException(CustomizeErrorCodeException.QUESTION_NOT_FOUND);
+        }
         QuestionDTO questionDTO = new QuestionDTO();
         BeanUtils.copyProperties(question,questionDTO);
         User user = userMapper.selectByPrimaryKey(question.getCreator());
@@ -117,7 +122,10 @@ public class QuestionService {
             questionUpdate.setTag(question.getTag());
             QuestionExample example = new QuestionExample();
             example.createCriteria().andIdEqualTo(question.getId());
-            questionMapper.updateByExampleSelective(questionUpdate, example);
+            int i = questionMapper.updateByExampleSelective(questionUpdate, example);
+            if(i != 1){
+                throw new CustomizeException(CustomizeErrorCodeException.QUESTION_NOT_FOUND);
+            }
         }
     }
 }
