@@ -4,6 +4,7 @@ import com.klay.community.dto.PaginationDTO;
 import com.klay.community.dto.QuestionDTO;
 import com.klay.community.exception.CustomizeErrorCodeException;
 import com.klay.community.exception.CustomizeException;
+import com.klay.community.mapper.QuestionExtMapper;
 import com.klay.community.mapper.QuestionMapper;
 import com.klay.community.mapper.UserMapper;
 import com.klay.community.model.Question;
@@ -29,6 +30,8 @@ public class QuestionService {
     private QuestionMapper questionMapper;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private QuestionExtMapper questionExtMapper;
 
     public PaginationDTO list(Integer page, Integer limit) {
         PaginationDTO paginationDTO = new PaginationDTO();
@@ -127,5 +130,11 @@ public class QuestionService {
                 throw new CustomizeException(CustomizeErrorCodeException.QUESTION_NOT_FOUND);
             }
         }
+    }
+    public void incView(Integer id) {
+        Question updateView = new Question();
+        updateView.setId(id);
+        updateView.setViewCount(1);
+        questionExtMapper.incView(updateView);
     }
 }
