@@ -1,8 +1,6 @@
 package com.klay.community.controller;
 
 import com.klay.community.dto.QuestionDTO;
-import com.klay.community.mapper.QuestionMapper;
-import com.klay.community.model.Question;
 import com.klay.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,9 +20,10 @@ public class QuestionController {
     private QuestionService questionService;
 
     @GetMapping("/question/{id}")
-    public String question(@PathVariable(name = "id")Integer id,
+    public String question(@PathVariable(name = "id") Long id,
                            Model model){
         QuestionDTO questionDTO = questionService.getQuestionById(id);
+        //新增阅读
         questionService.incView(id);
         model.addAttribute("question",questionDTO);
         return "question";
