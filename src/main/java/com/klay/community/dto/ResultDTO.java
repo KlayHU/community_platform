@@ -14,7 +14,7 @@ public class ResultDTO {
     private Integer code;
     private String message;
 
-    public static ResultDTO errorOf(Integer code, String message){
+    public static ResultDTO errorsOf(Integer code, String message){
         ResultDTO resultDTO = new ResultDTO();
         resultDTO.setCode(code);
         resultDTO.setMessage(message);
@@ -22,10 +22,10 @@ public class ResultDTO {
     }
     //封装好枚举类用于处理
     public static ResultDTO errorOf(CustomizeErrorCodeException errorCode) {
-        return errorOf(errorCode.getCode(),errorCode.getMessage());
+        return errorsOf(errorCode.getCode(),errorCode.getMessage());
     }
     public static ResultDTO errorOf(CustomizeException e) {
-        return errorOf(e.getCode(),e.getMessage());
+        return errorsOf(e.getCode(),e.getMessage());
     }
 
     //返回成功

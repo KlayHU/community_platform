@@ -7,6 +7,7 @@ import com.klay.community.mapper.CommentMapper;
 import com.klay.community.model.Comment;
 import com.klay.community.model.User;
 import com.klay.community.service.CommentService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,10 +24,6 @@ import javax.servlet.http.HttpServletRequest;
  **/
 @Controller
 public class CommentController {
-
-    @Autowired
-    private CommentMapper commentMapper;
-
     @Autowired
     private CommentService commentService;
 
@@ -37,6 +34,9 @@ public class CommentController {
         User user = (User)request.getSession().getAttribute("user");
         if(user == null){
             return ResultDTO.errorOf(CustomizeErrorCodeException.NO_LOGIN);
+        }
+        if(commentCreateDTO == null || StringUtils.isBlank(commentCreateDTO.getContent())){
+            return ResultDTO.errorOf(CustomizeErrorCodeException.CONTENT_IS_EMPTY);
         }
         Comment comment = new Comment();
         comment.setParentId(commentCreateDTO.getParentId());
