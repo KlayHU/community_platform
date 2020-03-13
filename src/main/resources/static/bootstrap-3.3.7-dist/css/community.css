@@ -38,3 +38,24 @@ body{
 .comment{
     margin: 10px 0 15px 0;
 }
+.comment_content{
+    margin-top: 0;
+}
+.menu{
+    color: #999;
+}
+.menu .icon{
+    margin-right: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.menu .icon:hover {
+    color: #499ef3;
+}
+.review{
+    margin-left: 15px;
+}
+.comments{
+    margin-bottom: 15px;
+    border-bottom: 1px solid #999999;
+}

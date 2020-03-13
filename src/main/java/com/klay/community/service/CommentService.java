@@ -1,16 +1,24 @@
 package com.klay.community.service;
 
+import com.klay.community.dto.CommentDTO;
 import com.klay.community.enums.CommentTypeEnum;
 import com.klay.community.exception.CustomizeErrorCodeException;
 import com.klay.community.exception.CustomizeException;
 import com.klay.community.mapper.CommentMapper;
 import com.klay.community.mapper.QuestionExtMapper;
 import com.klay.community.mapper.QuestionMapper;
-import com.klay.community.model.Comment;
-import com.klay.community.model.Question;
+import com.klay.community.mapper.UserMapper;
+import com.klay.community.model.*;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @description:
@@ -26,6 +34,8 @@ public class CommentService {
     private QuestionMapper questionMapper;
     @Autowired
     private QuestionExtMapper questionExtMapper;
+    @Autowired
+    private UserMapper userMapper;
 
     @Transactional
     public void insert(Comment comment) {
@@ -53,5 +63,35 @@ public class CommentService {
             dbQuestion.setCommentCount(1);
             questionExtMapper.incCommentCount(dbQuestion);
         }
+    }
+
+    public List<CommentDTO> listByQuestionId(Long id) {
+        CommentExample commentExample = new CommentExample();
+        commentExample.createCriteria().andParentIdEqualTo(id)
+                .andTypeEqualTo(CommentTypeEnum.QUESTION.getType());
+        List<Comment> comments = commentMapper.selectByExample(commentExample);
+        if (comments.size()==0) {
+            //如过没有评论，返回空集
+            return new ArrayList<>();
+        }
+        //如果评论存在，map遍历返回评论人集合，并且把结果集转换成Set对象，去重
+        Set<Long> commentAtors = comments.stream().map(comment -> comment.getCommentAuthor()).collect(Collectors.toSet());
+        //拿到所有的作者id
+        List<Long> userId = new ArrayList<>();
+        userId.addAll(commentAtors);
+        UserExample userExample = new UserExample();
+        //把作者id和user表的id相匹配
+        userExample.createCriteria().andIdIn(userId);
+        List<User> users = userMapper.selectByExample(userExample);
+        //通过map的形式循环User对象
+        Map<Long, User> userMap = users.stream().collect(Collectors.toMap(user -> user.getId(), user -> user));
+
+        List<CommentDTO> commentDTOS = comments.stream().map(comment -> {
+            CommentDTO commentDTO = new CommentDTO();
+            BeanUtils.copyProperties(comment,commentDTO);
+            commentDTO.setUser(userMap.get(comment.getCommentAuthor()));
+            return commentDTO;
+        }).collect(Collectors.toList());
+        return commentDTOS;
     }
 }

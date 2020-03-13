@@ -1,6 +1,6 @@
 package com.klay.community.controller;
 
-import com.klay.community.dto.CommentDTO;
+import com.klay.community.dto.CommentCreateDTO;
 import com.klay.community.dto.ResultDTO;
 import com.klay.community.exception.CustomizeErrorCodeException;
 import com.klay.community.mapper.CommentMapper;
@@ -32,16 +32,16 @@ public class CommentController {
 
     @ResponseBody
     @RequestMapping(value = "/comment", method = RequestMethod.POST)
-    public Object post(@RequestBody CommentDTO commentDTO,
+    public Object post(@RequestBody CommentCreateDTO commentCreateDTO,
                           HttpServletRequest request){
         User user = (User)request.getSession().getAttribute("user");
         if(user == null){
             return ResultDTO.errorOf(CustomizeErrorCodeException.NO_LOGIN);
         }
         Comment comment = new Comment();
-        comment.setParentId(commentDTO.getParentId());
-        comment.setContent(commentDTO.getContent());
-        comment.setType(commentDTO.getType());
+        comment.setParentId(commentCreateDTO.getParentId());
+        comment.setContent(commentCreateDTO.getContent());
+        comment.setType(commentCreateDTO.getType());
         comment.setGmtCreate(System.currentTimeMillis());
         comment.setGmtModify(System.currentTimeMillis());
         comment.setCommentAuthor(1L);
