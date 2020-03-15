@@ -48,19 +48,50 @@
                                      th:src="${comment.user.avatarUrl}">
                             </a>
                         </div>
-                        <div class="media-body">
+                        <div class="media-body" th:id="${'comment-body-'+comment.id}">
                             <h5 class="media-heading">
                                 <span th:text="${comment.user.name}"></span>
                             </h5>
                             <div th:text="${comment.content}"></div>
                             <div class="menu">
                                 <span class="glyphicon glyphicon-thumbs-up icon"></span>
-                                <span class="glyphicon glyphicon-comment icon"></span>
+                                <span class="glyphicon glyphicon-comment icon" th:data-id="${comment.id}" onclick="commentStatement(this)"></span>
                                 <span th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd HH:mm:ss')}"></span>
+                            </div>
+                            <!--二级评论弹框-->
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse sub-comments"
+                                 th:id="${'comment-'+comment.id}">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment-c" th:each="comment : ${comments}">
+                                    <!--评论列表-->
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <a href="#">
+                                                <img class="media-object img-rounded"
+                                                     th:src="${comment.user.avatarUrl}">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">
+                                                <span th:text="${comment.user.name}"></span>
+                                            </h5>
+                                            <div th:text="${comment.content}"></div>
+                                            <div class="menu distance">
+                                                <span th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd HH:mm:ss')}"></span>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" class="form-control" placeholder="说点什么吧..." th:id="${'reply-'+comment.id}">
+                                    <button type="button" class="btn btn-success btn-publish" onclick="comment(this)" th:data-id="${comment.id}">评论</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <!--回复框-->
                 <h3 class="commit-content">提交回复</h3>
@@ -84,7 +115,6 @@
                     <button type="button" class="btn btn-success btn-publish" onclick="Post()">回复</button>
                 </div>
             </div>
-        </div>
             <!--栅格右边内容-->
             <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -109,6 +139,6 @@
             </div>
         </div>
         </div>
-    </div>
+</div>
 </body>
 </html>

@@ -1,70 +1,108 @@
-body{
+body {
     background-color: #ebebeb;
 }
-.main{
+
+.main {
     background-color: white;
     margin: 35px;
 }
-.head{
+
+.head {
     background-color: #def2fc;
 }
-.btn-publish{
+
+.btn-publish {
     float: right;
     margin-bottom: 15px;
 }
-.question-title{
+
+.question-title {
     margin-top: 25px;
 }
-.media-object{
+
+.media-object {
     width: 38px;
     height: 38px;
 }
-.desc-text{
+
+.desc-text {
     font-size: 12px;
     font-weight: normal;
     color: #999;
 }
-.profile .section{
+
+.profile .section {
     margin-top: 25px;
 }
-.community-menu{
+
+.community-menu {
     color: #999;
     font-size: 13px;
     margin-bottom: 15px;
     cursor: pointer;
     margin-left: 10px;
 }
-.jumbotron{
+
+.jumbotron {
     margin: 50px;
 }
-.media-body{
+
+.media-body {
     padding-top: 10px;
 }
-.comment{
+
+.comment {
     margin: 10px 0 15px 0;
 }
-.hrsp{
+
+.sub-comments {
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    padding-top: 20px;
+    margin-bottom: 15px;
+}
+
+.sub-comments .btn {
+    margin: 10px 0;
+}
+
+.distance {
+    margin-top: 10px;
+}
+
+.hrsp {
     margin-top: 0;
 }
-.menu{
+
+.menu {
     color: #999;
 }
-.menu .icon{
+
+.menu .icon {
     margin-right: 6px;
     font-size: 15px;
     cursor: pointer;
 }
+
+.menu .active {
+    color: #499ef3;
+}
+
 .menu .icon:hover {
     color: #499ef3;
 }
-.review{
+
+.review {
     margin-left: 10px;
 }
-.comments{
+
+.comments {
     margin-bottom: 15px;
     border-bottom: 1px solid #999999;
 }
-.commit-content{
+
+.commit-content {
     margin-left: 15px;
     margin-bottom: -5px;
 }
