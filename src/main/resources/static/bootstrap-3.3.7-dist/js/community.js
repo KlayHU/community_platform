@@ -100,7 +100,7 @@ function collapseComments(e) {
                     })).append($("<div/>", {
                         "class": "menu distance"
                     }).append($("<span/>", {
-                        "html": moment(comment.gmtCreate).format('YYYY-MM-DD HH:MM:SS')
+                        "html": moment(comment.gmtCreate).format('YYYY-MM-DD HH:MM:ss')
                     })));
 
                     var mediaElement = $("<div/>", {

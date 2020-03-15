@@ -52,6 +52,9 @@ public class CommentService {
             }
             commentMapper.insert(comment);
 
+            //新增评论数
+            dbComment.setCommentCount(1);
+            commentExtMapper.incCommentCount(dbComment);
 
         }else{
             //回复问题
