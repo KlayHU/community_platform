@@ -4,10 +4,7 @@ import com.klay.community.dto.CommentDTO;
 import com.klay.community.enums.CommentTypeEnum;
 import com.klay.community.exception.CustomizeErrorCodeException;
 import com.klay.community.exception.CustomizeException;
-import com.klay.community.mapper.CommentMapper;
-import com.klay.community.mapper.QuestionExtMapper;
-import com.klay.community.mapper.QuestionMapper;
-import com.klay.community.mapper.UserMapper;
+import com.klay.community.mapper.*;
 import com.klay.community.model.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +33,8 @@ public class CommentService {
     private QuestionExtMapper questionExtMapper;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private CommentExtMapper commentExtMapper;
 
     @Transactional
     public void insert(Comment comment) {
@@ -52,6 +51,7 @@ public class CommentService {
                 throw new CustomizeException(CustomizeErrorCodeException.COMMENT_NOT_FOUND);
             }
             commentMapper.insert(comment);
+
 
         }else{
             //回复问题

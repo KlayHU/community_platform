@@ -62,6 +62,11 @@ body {
     padding-top: 20px;
     margin-bottom: 15px;
 }
+.comment-c{
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
 
 .sub-comments .btn {
     margin: 10px 0;
