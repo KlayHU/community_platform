@@ -3,6 +3,7 @@ package com.klay.community.controller;
 import com.klay.community.dto.CommentDTO;
 import com.klay.community.dto.QuestionDTO;
 import com.klay.community.enums.CommentTypeEnum;
+import com.klay.community.model.Question;
 import com.klay.community.service.CommentService;
 import com.klay.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +31,13 @@ public class QuestionController {
     @GetMapping("/question/{id}")
     public String question(@PathVariable(name = "id") Long id, Model model){
         QuestionDTO questionDTO = questionService.getQuestionById(id);
+        List<QuestionDTO> relatedQuestion = questionService.selectRelated(questionDTO);
         List<CommentDTO> comments = commentService.listByTargetId(id, CommentTypeEnum.QUESTION);
         //新增阅读
         questionService.incView(id);
         model.addAttribute("question",questionDTO);
         model.addAttribute("comments",comments);
+        model.addAttribute("relatedQuestion",relatedQuestion);
         return "question";
     }
 }
