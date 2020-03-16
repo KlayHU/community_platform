@@ -1,9 +1,11 @@
 package com.klay.community.controller;
 
+import com.klay.community.cache.TagCache;
 import com.klay.community.dto.QuestionDTO;
 import com.klay.community.model.Question;
 import com.klay.community.model.User;
 import com.klay.community.service.QuestionService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -33,11 +36,13 @@ public class PublishController {
         model.addAttribute("description",question.getDescription());
         model.addAttribute("tag",question.getTag());
         model.addAttribute("id",question.getId());
+        model.addAttribute("tags",TagCache.get());
         return "publish";
     }
 
     @GetMapping("/publish")
-    public String publish() {
+    public String publish(Model model) {
+        model.addAttribute("tags",TagCache.get());
         return "publish";
     }
 
@@ -51,6 +56,7 @@ public class PublishController {
         model.addAttribute("title",title);
         model.addAttribute("description",description);
         model.addAttribute("tag",tag);
+        model.addAttribute("tags",TagCache.get());
 
         if(title == null || title == "") {
             model.addAttribute("Error", "标题不能为空");
@@ -62,6 +68,12 @@ public class PublishController {
             model.addAttribute("Error","标签不能为空");
             return "publish";
         }
+        String invalid = TagCache.filterInvalid(tag);
+        if(StringUtils.isNotBlank(invalid)){
+            model.addAttribute("Error","输入非法标签: "+invalid);
+            return "publish";
+        }
+
         User user =(User)request.getSession().getAttribute("user");
         if (user == null) {
                 model.addAttribute("Error", "请先登录！");

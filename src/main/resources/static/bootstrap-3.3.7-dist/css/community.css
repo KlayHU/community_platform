@@ -15,6 +15,16 @@ body {
     float: right;
     margin-bottom: 15px;
 }
+.publish-tag{
+    display: none;
+    margin-top: 15px;
+    padding-top: 10px;
+}
+.publish-tag .label-info{
+    white-space: normal;
+    margin: 5px 5px;
+    display: inline-block;
+}
 
 .question-title {
     margin-top: 25px;
