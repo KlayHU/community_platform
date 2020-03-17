@@ -11,8 +11,8 @@ import java.util.List;
  * @create: 2020/2/28 20:21
  **/
 @Data
-public class PaginationDTO {
-    private List<QuestionDTO> questions;
+public class PaginationDTO<T> {
+    private List<T> data;
     private boolean hasPreviousPages;      //向前按钮
     private boolean hasFirstPage;       //去首页按钮
     private boolean hasNextPage;        //向后按钮

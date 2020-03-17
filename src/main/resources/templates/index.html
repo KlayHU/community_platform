@@ -24,7 +24,7 @@
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
             <h2><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 发现 </h2>
             <hr>
-            <div class="media" th:each="question : ${pagination.questions}">
+            <div class="media" th:each="question : ${pagination.data}">
                 <div class="media-left">
                     <a href="#">
                         <img class="media-object img-rounded"
@@ -39,7 +39,7 @@
                         <span class="desc-text"><span th:text="${question.commentCount}"></span>个回复 ·
                                 <span th:text="${question.viewCount}"></span>次浏览 ·
                                 <span th:text="${question.followCount}"></span>个关注 ·
-                                <span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm:ss')}"></span>
+                                <span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
                             </span>
                     </div>
             </div>

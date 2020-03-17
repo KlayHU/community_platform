@@ -12,7 +12,9 @@ public enum CustomizeErrorCodeException implements CustomizeErrorCode {
     SYSTEM_ERROR(2004,"忙不过来啦，请稍后再试..."),
     TYPE_PARAM_WRONG(2005,"评论类型错误或不存在!"),
     COMMENT_NOT_FOUND(2006,"回复的评论不存在，要不要换个问题试试？"),
-    CONTENT_IS_EMPTY(2007,"评论内容为空!")
+    CONTENT_IS_EMPTY(2007,"评论内容为空!"),
+    READ_NOTIFICATION_FAIL(2008,"不能看别人评论的通知哦~"),
+    NOTIFICATION_NOT_FOUND(2009,"这条消息被服务器吃掉了！")
     ;
 
     private Integer code;
