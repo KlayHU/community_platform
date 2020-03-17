@@ -3,6 +3,7 @@ package com.klay.community.interceptor;
 import com.klay.community.mapper.UserMapper;
 import com.klay.community.model.User;
 import com.klay.community.model.UserExample;
+import com.klay.community.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -23,6 +24,8 @@ public class SessionInterceptor implements HandlerInterceptor {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private NotificationService notificationService;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -36,6 +39,8 @@ public class SessionInterceptor implements HandlerInterceptor {
                     List<User> user = userMapper.selectByExample(userExample);
                     if (user.get(0) != null) {
                         request.getSession().setAttribute("user", user.get(0));
+                        Long unreadCount = notificationService.unreadCount(user.get(0).getId());
+                        request.getSession().setAttribute("unreadCount",unreadCount);
                     }
                     break;
                 }
