@@ -1,0 +1,11 @@
+2020-03-19 23:57:33.436  INFO 22692 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 22692 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-19 23:57:33.453  INFO 22692 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-19 23:57:38.504  INFO 22692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-19 23:57:38.526  INFO 22692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-19 23:57:38.529  INFO 22692 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-19 23:57:38.750  INFO 22692 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-19 23:57:38.751  INFO 22692 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4918 ms
+2020-03-19 23:57:40.018  INFO 22692 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-19 23:57:40.171  INFO 22692 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-19 23:57:40.687  INFO 22692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-19 23:57:40.695  INFO 22692 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 8.827 seconds (JVM running for 15.23)

@@ -6,6 +6,7 @@ import com.klay.community.mapper.UserMapper;
 import com.klay.community.model.User;
 import com.klay.community.provider.GithubProvider;
 import com.klay.community.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,7 @@ import java.util.UUID;
  * @create: 2020/2/15 2:29
  **/
 @Controller
+@Slf4j
 public class AuthorizeController {
 
     @Autowired
@@ -65,6 +67,7 @@ public class AuthorizeController {
             return "redirect:/";
         } else {
             //登录失败，返回重新登录
+            log.error("callback get github error,{}",githubUser);
             return "redirect:/";
         }
     }
