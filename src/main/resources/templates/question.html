@@ -109,12 +109,12 @@
                     <div class="media-left">
                         <a href="#">
                             <img class="media-object img-rounded"
-                                 th:src="${question.user.avatarUrl}">
+                                 th:src="${session.user != null ?session.user.avatarUrl : '/bootstrap-3.3.7-dist/images/defaultUser-icon.png'}">
                         </a>
                     </div>
                     <div class="media-body">
                         <h5 class="media-heading">
-                            <span th:text="${question.user.name}"></span>
+                            <span th:text="${session.user != null ?session.user.name : '未登录用户'}"></span>
                         </h5>
                     </div>
                 </div>
