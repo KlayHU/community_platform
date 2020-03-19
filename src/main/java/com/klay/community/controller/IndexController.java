@@ -22,9 +22,11 @@ public class IndexController {
     @GetMapping("/")
     public String index(Model model,
                         @RequestParam(name = "page", defaultValue = "1") Integer page,
-                        @RequestParam(name = "limit", defaultValue = "2") Integer limit) {
-        PaginationDTO pagination = questionService.list(page,limit);
+                        @RequestParam(name = "limit", defaultValue = "3") Integer limit,
+                        @RequestParam(name = "search", required = false) String search) {
+        PaginationDTO pagination = questionService.list(search,page,limit);
         model.addAttribute("pagination", pagination);
+        model.addAttribute("search", search);
         return "index";
     }
 }
