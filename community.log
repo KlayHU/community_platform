@@ -187,3 +187,4 @@
 2020-03-21 21:46:35.128  INFO 22968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-03-21 21:46:35.150  INFO 22968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
 2020-03-21 21:46:35.437  INFO 22968 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-21 21:46:35.936  INFO 22968 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
