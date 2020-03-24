@@ -2,7 +2,6 @@ package com.klay.community.controller;
 
 import com.klay.community.cache.HotTagCache;
 import com.klay.community.dto.PaginationDTO;
-import com.klay.community.schedule.HotTagTasks;
 import com.klay.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,11 +28,13 @@ public class IndexController {
     public String index(Model model,
                         @RequestParam(name = "page", defaultValue = "1") Integer page,
                         @RequestParam(name = "limit", defaultValue = "7") Integer limit,
-                        @RequestParam(name = "search", required = false) String search) {
-        PaginationDTO pagination = questionService.list(search,page,limit);
+                        @RequestParam(name = "search", required = false) String search,
+                        @RequestParam(name = "tag", required = false) String tag) {
+        PaginationDTO pagination = questionService.list(search,tag,page,limit);
         List<String> hotTags = hotTagCache.getHots();
         model.addAttribute("pagination", pagination);
         model.addAttribute("search", search);
+        model.addAttribute("tag", tag);
         model.addAttribute("hotTags", hotTags);
         return "index";
     }

@@ -2,7 +2,6 @@ package com.klay.community.cache;
 
 import com.klay.community.dto.HotTagDTO;
 import lombok.Data;
-import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -18,14 +17,14 @@ public class HotTagCache {
     private List<String> hots = new ArrayList<>();
 
     public void updateTags(Map<String, Integer> tags) {
-        int max = 3;
+        int max = 5;
         PriorityQueue<HotTagDTO> priorityQueue = new PriorityQueue<>(max);
 
         tags.forEach((name, priority) -> {
             HotTagDTO hotTagDTO = new HotTagDTO();
             hotTagDTO.setName(name);
             hotTagDTO.setPriority(priority);
-            if (priorityQueue.size() < 3) {
+            if (priorityQueue.size() < max) {
                 priorityQueue.add(hotTagDTO);
             } else {
                 //拿到第一个元素,即热门话题的计算出的最小权重

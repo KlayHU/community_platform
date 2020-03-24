@@ -1,10 +1,8 @@
 package com.klay.community.controller;
 
-import com.klay.community.cache.TagCache;
 import com.klay.community.dto.CommentDTO;
 import com.klay.community.dto.QuestionDTO;
 import com.klay.community.enums.CommentTypeEnum;
-import com.klay.community.model.Question;
 import com.klay.community.service.CommentService;
 import com.klay.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;

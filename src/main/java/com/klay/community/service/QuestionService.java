@@ -20,7 +20,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
 /**
@@ -38,17 +37,19 @@ public class QuestionService {
     @Autowired
     private QuestionExtMapper questionExtMapper;
 
-    public PaginationDTO list(String search,Integer page, Integer limit) {
+    public PaginationDTO list(String search, String tag, Integer page, Integer limit) {
         if (StringUtils.isNotBlank(search)){
         String[] tags = StringUtils.split(search, " ");
         search = Arrays.stream(tags).collect(Collectors.joining("|"));
         }
-        PaginationDTO paginationDTO = new PaginationDTO();
 
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
         questionQueryDTO.setSearch(search);
+        questionQueryDTO.setTag(tag);
+
         Integer currentPage =questionExtMapper.countBySearch(questionQueryDTO);     //从列数拿到总数
 
+        PaginationDTO paginationDTO = new PaginationDTO();
         paginationDTO.setPagination(currentPage, page, limit);
         if (page < 1) {
             page = 1;

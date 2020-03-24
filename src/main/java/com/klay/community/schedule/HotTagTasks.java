@@ -27,8 +27,8 @@ public class HotTagTasks {
     @Autowired
     private HotTagCache hotTagCache;
 
-    @Scheduled(fixedRate = 10000)
-    //每天凌晨一点进行
+    @Scheduled(fixedRate = 1000 * 60 * 60 * 6)
+    //每天凌晨一点进行话题更新
     //@Scheduled(cron = "0 0 1 * * *")
     public void hotTagSchedule() {
         int offset = 0;
@@ -56,6 +56,6 @@ public class HotTagTasks {
             offset += limit;
         }
         hotTagCache.updateTags(priorities);
-        log.info("HotTagsStop time : {}", new Date());
+        //log.info("HotTagsStop time : {}", new Date());
     }
 }

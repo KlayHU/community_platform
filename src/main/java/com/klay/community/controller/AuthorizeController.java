@@ -2,7 +2,6 @@ package com.klay.community.controller;
 
 import com.klay.community.dto.AccessTokenDTO;
 import com.klay.community.dto.GithubUser;
-import com.klay.community.mapper.UserMapper;
 import com.klay.community.model.User;
 import com.klay.community.provider.GithubProvider;
 import com.klay.community.service.UserService;
