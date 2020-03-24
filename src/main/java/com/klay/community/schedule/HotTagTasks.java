@@ -1,10 +1,17 @@
 package com.klay.community.schedule;
 
+import com.klay.community.cache.HotTagCache;
+import com.klay.community.mapper.QuestionMapper;
+import com.klay.community.model.Question;
+import com.klay.community.model.QuestionExample;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.ibatis.session.RowBounds;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import java.util.*;
 
 /**
  * @description:
@@ -14,8 +21,41 @@ import java.util.Date;
 @Component
 @Slf4j
 public class HotTagTasks {
-    @Scheduled(fixedRate = 5000)
-    public void reportCurrentTime(){
-        log.info("The time is now {}",new Date());
+
+    @Autowired
+    private QuestionMapper questionMapper;
+    @Autowired
+    private HotTagCache hotTagCache;
+
+    @Scheduled(fixedRate = 10000)
+    //每天凌晨一点进行
+    //@Scheduled(cron = "0 0 1 * * *")
+    public void hotTagSchedule() {
+        int offset = 0;
+        int limit = 5;
+        log.info("HotTagsStart time : {}", new Date());
+        Map<String, Integer> priorities = new HashMap<>();
+        List<Question> list = new ArrayList<>();
+        while (offset == 0 || list.size() == limit) {
+            list = questionMapper.selectByExampleWithRowbounds(new QuestionExample(),
+                    new RowBounds(offset, limit));
+
+            for (Question question : list) {
+                String[] tags = StringUtils.split(question.getTag(), ",");
+                for (String tag : tags) {
+                    Integer value = priorities.get(tag);
+                    //如果标签存在，加上计算权重的公式
+                    if (value != null) {
+                        priorities.put(tag, value + 5 + question.getCommentCount());
+                        //如果标签不存在则不加
+                    } else {
+                        priorities.put(tag, 5 + question.getCommentCount());
+                    }
+                }
+            }
+            offset += limit;
+        }
+        hotTagCache.updateTags(priorities);
+        log.info("HotTagsStop time : {}", new Date());
     }
 }
