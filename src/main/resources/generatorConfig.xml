@@ -37,5 +37,7 @@
         </table>
         <table tableName="notification" domainObjectName="Notification">
         </table>
+        <table tableName="ads" domainObjectName="Ads">
+        </table>
     </context>
 </generatorConfiguration>
