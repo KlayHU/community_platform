@@ -77,6 +77,10 @@ body {
 .media-body {
     padding-top: 10px;
 }
+.badgestatus{
+    margin-left: 5px;
+    margin-top: -2px;
+}
 
 .comment {
     margin: 10px 0 15px 0;
