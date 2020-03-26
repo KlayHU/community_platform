@@ -181,3 +181,21 @@
 2020-03-25 00:43:12.935  INFO 8412 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-03-25 00:43:12.937  INFO 8412 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-03-25 00:43:12.953  INFO 8412 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2020-03-26 17:26:21.388  INFO 12532 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 12532 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-26 17:26:21.408  INFO 12532 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-26 17:26:24.717  INFO 12532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-26 17:26:24.739  INFO 12532 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-26 17:26:24.740  INFO 12532 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-26 17:26:24.929  INFO 12532 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-26 17:26:24.929  INFO 12532 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3321 ms
+2020-03-26 17:26:26.071  INFO 12532 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-26 17:26:26.191  INFO 12532 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-26 17:26:26.530  INFO 12532 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-26 17:26:26.608  INFO 12532 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Thu Mar 26 17:26:26 CST 2020
+2020-03-26 17:26:26.669  INFO 12532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-26 17:26:26.678  INFO 12532 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 6.681 seconds (JVM running for 10.738)
+2020-03-26 17:26:26.698  INFO 12532 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-26 17:26:26.998  INFO 12532 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-26 17:26:39.944  INFO 12532 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-26 17:26:39.947  INFO 12532 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-26 17:26:39.962  INFO 12532 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
