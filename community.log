@@ -175,3 +175,213 @@
 2020-03-29 16:43:22.706  INFO 15652 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-03-29 16:43:22.710  INFO 15652 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2020-03-29 16:43:22.734  INFO 15652 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2020-03-29 17:28:59.452  INFO 1184 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 1184 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-29 17:28:59.464  INFO 1184 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-29 17:29:02.669  INFO 1184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 17:29:02.691  INFO 1184 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 17:29:02.692  INFO 1184 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-29 17:29:02.913  INFO 1184 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 17:29:02.914  INFO 1184 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3278 ms
+2020-03-29 17:29:04.089  INFO 1184 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 17:29:04.244  INFO 1184 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-29 17:29:04.628  INFO 1184 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-29 17:29:04.708  INFO 1184 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Sun Mar 29 17:29:04 CST 2020
+2020-03-29 17:29:04.771  INFO 1184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 17:29:04.779  INFO 1184 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 6.466 seconds (JVM running for 10.251)
+2020-03-29 17:29:04.799  INFO 1184 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 17:29:05.110  INFO 1184 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 17:29:24.785  INFO 1184 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 17:29:24.786  INFO 1184 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 17:29:24.810  INFO 1184 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2020-03-29 17:29:47.358  INFO 1184 --- [http-nio-8080-exec-5] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@3162dd97
+2020-03-29 17:30:15.964  INFO 1184 --- [http-nio-8080-exec-4] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@35b1b6e9
+2020-03-29 17:45:25.094  INFO 12680 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 12680 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-29 17:45:25.103  INFO 12680 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-29 17:45:28.020  INFO 12680 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 17:45:28.042  INFO 12680 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 17:45:28.043  INFO 12680 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-29 17:45:28.262  INFO 12680 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 17:45:28.262  INFO 12680 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2999 ms
+2020-03-29 17:45:29.436  INFO 12680 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 17:45:29.577  INFO 12680 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-29 17:45:29.964  INFO 12680 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-29 17:45:30.044  INFO 12680 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Sun Mar 29 17:45:30 CST 2020
+2020-03-29 17:45:30.104  INFO 12680 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 17:45:30.113  INFO 12680 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 6.285 seconds (JVM running for 10.762)
+2020-03-29 17:45:30.131  INFO 12680 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 17:45:30.463  INFO 12680 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 17:45:41.150  INFO 12680 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 17:45:41.151  INFO 12680 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 17:45:41.167  INFO 12680 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2020-03-29 17:46:27.446  INFO 12680 --- [http-nio-8080-exec-6] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@48ecd306
+2020-03-29 17:49:02.478  INFO 9832 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 9832 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-29 17:49:02.485  INFO 9832 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-29 17:49:05.533  INFO 9832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 17:49:05.554  INFO 9832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 17:49:05.555  INFO 9832 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-29 17:49:05.763  INFO 9832 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 17:49:05.764  INFO 9832 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3107 ms
+2020-03-29 17:49:06.923  INFO 9832 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 17:49:07.070  INFO 9832 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-29 17:49:07.451  INFO 9832 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-29 17:49:07.530  INFO 9832 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Sun Mar 29 17:49:07 CST 2020
+2020-03-29 17:49:07.593  INFO 9832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 17:49:07.602  INFO 9832 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 6.257 seconds (JVM running for 10.028)
+2020-03-29 17:49:07.622  INFO 9832 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 17:49:07.927  INFO 9832 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 17:49:14.547  INFO 9832 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 17:49:14.548  INFO 9832 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 17:49:14.563  INFO 9832 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2020-03-29 17:53:48.771  INFO 16552 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 16552 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-29 17:53:48.779  INFO 16552 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-29 17:53:51.638  INFO 16552 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 17:53:51.658  INFO 16552 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 17:53:51.660  INFO 16552 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-29 17:53:51.885  INFO 16552 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 17:53:51.885  INFO 16552 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2942 ms
+2020-03-29 17:53:53.059  INFO 16552 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 17:53:53.204  INFO 16552 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-29 17:53:53.598  INFO 16552 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-29 17:53:53.679  INFO 16552 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Sun Mar 29 17:53:53 CST 2020
+2020-03-29 17:53:53.739  INFO 16552 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 17:53:53.746  INFO 16552 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 6.178 seconds (JVM running for 9.916)
+2020-03-29 17:53:53.766  INFO 16552 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 17:53:54.064  INFO 16552 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 17:54:03.009  INFO 16552 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 17:54:03.011  INFO 16552 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 17:54:03.028  INFO 16552 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2020-03-29 17:54:22.880  INFO 16552 --- [http-nio-8080-exec-6] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@79facd11
+2020-03-29 17:55:33.157  INFO 1284 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 1284 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-29 17:55:33.167  INFO 1284 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-29 17:55:38.479  INFO 1284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 17:55:38.502  INFO 1284 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 17:55:38.504  INFO 1284 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-29 17:55:38.830  INFO 1284 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 17:55:38.832  INFO 1284 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5325 ms
+2020-03-29 17:55:40.497  INFO 1284 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 17:55:40.920  INFO 1284 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-29 17:55:41.431  INFO 1284 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-29 17:55:41.520  INFO 1284 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Sun Mar 29 17:55:41 CST 2020
+2020-03-29 17:55:41.621  INFO 1284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 17:55:41.637  INFO 1284 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 9.994 seconds (JVM running for 14.105)
+2020-03-29 17:55:41.672  INFO 1284 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 17:55:42.165  INFO 1284 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 17:55:48.525  INFO 1284 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 17:55:48.526  INFO 1284 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 17:55:48.540  INFO 1284 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2020-03-29 17:56:14.763  INFO 1284 --- [http-nio-8080-exec-6] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@17536c1a
+2020-03-29 17:57:44.828  INFO 1284 --- [http-nio-8080-exec-8] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@1f90bc02
+2020-03-29 18:27:43.369  INFO 1568 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 1568 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-29 18:27:43.376  INFO 1568 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-29 18:27:47.178  INFO 1568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 18:27:47.210  INFO 1568 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 18:27:47.212  INFO 1568 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-29 18:27:47.547  INFO 1568 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 18:27:47.551  INFO 1568 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3945 ms
+2020-03-29 18:27:49.073  INFO 1568 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 18:27:49.232  INFO 1568 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-29 18:27:49.668  INFO 1568 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-29 18:27:49.754  INFO 1568 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Sun Mar 29 18:27:49 CST 2020
+2020-03-29 18:27:49.818  INFO 1568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 18:27:49.827  INFO 1568 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 7.954 seconds (JVM running for 12.586)
+2020-03-29 18:27:49.848  INFO 1568 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 18:27:50.176  INFO 1568 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 18:28:44.475  INFO 1568 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 18:28:44.476  INFO 1568 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 18:28:44.491  INFO 1568 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2020-03-29 18:29:06.605  INFO 1568 --- [http-nio-8080-exec-7] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@58a38551
+2020-03-29 18:54:30.082  INFO 15456 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 15456 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-29 18:54:30.091  INFO 15456 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-29 18:54:33.184  INFO 15456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 18:54:33.204  INFO 15456 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 18:54:33.206  INFO 15456 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-29 18:54:33.425  INFO 15456 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 18:54:33.425  INFO 15456 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3158 ms
+2020-03-29 18:54:34.596  INFO 15456 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 18:54:34.734  INFO 15456 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-29 18:54:35.108  INFO 15456 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-29 18:54:35.187  INFO 15456 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Sun Mar 29 18:54:35 CST 2020
+2020-03-29 18:54:35.244  INFO 15456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 18:54:35.253  INFO 15456 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 6.447 seconds (JVM running for 10.115)
+2020-03-29 18:54:35.275  INFO 15456 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 18:54:35.598  INFO 15456 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 18:54:45.644  INFO 15456 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 18:54:45.646  INFO 15456 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 18:54:45.667  INFO 15456 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2020-03-29 18:55:04.923  INFO 15456 --- [http-nio-8080-exec-5] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@5877055d
+2020-03-29 19:08:43.665  INFO 7060 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 7060 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-29 19:08:43.676  INFO 7060 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-29 19:08:47.020  INFO 7060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 19:08:47.043  INFO 7060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 19:08:47.044  INFO 7060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-29 19:08:47.282  INFO 7060 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 19:08:47.283  INFO 7060 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3444 ms
+2020-03-29 19:08:48.529  INFO 7060 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 19:08:48.678  INFO 7060 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-29 19:08:49.097  INFO 7060 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-29 19:08:49.178  INFO 7060 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Sun Mar 29 19:08:49 CST 2020
+2020-03-29 19:08:49.247  INFO 7060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 19:08:49.255  INFO 7060 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 6.72 seconds (JVM running for 10.463)
+2020-03-29 19:08:49.278  INFO 7060 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 19:08:49.590  INFO 7060 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 19:08:53.863  INFO 7060 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 19:08:53.864  INFO 7060 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 19:08:53.879  INFO 7060 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2020-03-29 19:09:11.513  INFO 7060 --- [http-nio-8080-exec-4] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@76b5c943
+2020-03-29 19:16:17.562  INFO 9444 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 9444 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-29 19:16:17.572  INFO 9444 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-29 19:16:20.924  INFO 9444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 19:16:20.948  INFO 9444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 19:16:20.949  INFO 9444 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-29 19:16:21.163  INFO 9444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 19:16:21.164  INFO 9444 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3428 ms
+2020-03-29 19:16:22.384  INFO 9444 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 19:16:22.552  INFO 9444 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-29 19:16:22.947  INFO 9444 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-29 19:16:23.030  INFO 9444 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Sun Mar 29 19:16:23 CST 2020
+2020-03-29 19:16:23.087  INFO 9444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 19:16:23.095  INFO 9444 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 6.818 seconds (JVM running for 10.987)
+2020-03-29 19:16:23.118  INFO 9444 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 19:16:23.406  INFO 9444 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 19:18:57.572  INFO 9444 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 19:18:57.574  INFO 9444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 19:18:57.591  INFO 9444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2020-03-29 19:19:18.445  INFO 9444 --- [http-nio-8080-exec-7] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@56eaecf6
+2020-03-29 19:29:19.677  INFO 4220 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 4220 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-29 19:29:19.684  INFO 4220 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-29 19:29:22.764  INFO 4220 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 19:29:22.785  INFO 4220 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 19:29:22.786  INFO 4220 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-29 19:29:22.999  INFO 4220 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 19:29:22.999  INFO 4220 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3135 ms
+2020-03-29 19:29:24.209  INFO 4220 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 19:29:24.370  INFO 4220 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-29 19:29:24.738  INFO 4220 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-29 19:29:24.814  INFO 4220 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Sun Mar 29 19:29:24 CST 2020
+2020-03-29 19:29:24.876  INFO 4220 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 19:29:24.883  INFO 4220 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 6.452 seconds (JVM running for 10.228)
+2020-03-29 19:29:24.903  INFO 4220 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 19:29:25.232  INFO 4220 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 19:29:52.977  INFO 4220 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 19:29:52.979  INFO 4220 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 19:29:52.993  INFO 4220 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2020-03-29 19:30:13.031  INFO 4220 --- [http-nio-8080-exec-6] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@490ac16c
+2020-03-29 19:38:33.480  INFO 13440 --- [main] com.klay.community.CommunityApplication  : Starting CommunityApplication on DESKTOP-0ID6MR1 with PID 13440 (C:\Users\klay\Desktop\community\target\classes started by klay in C:\Users\klay\Desktop\community)
+2020-03-29 19:38:33.511  INFO 13440 --- [main] com.klay.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-03-29 19:38:36.553  INFO 13440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-29 19:38:36.573  INFO 13440 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-29 19:38:36.575  INFO 13440 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-03-29 19:38:36.802  INFO 13440 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-29 19:38:36.804  INFO 13440 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3121 ms
+2020-03-29 19:38:37.995  INFO 13440 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-29 19:38:38.165  INFO 13440 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-29 19:38:38.609  INFO 13440 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-29 19:38:38.694  INFO 13440 --- [scheduling-1] com.klay.community.schedule.HotTagTasks  : HotTagsStart time : Sun Mar 29 19:38:38 CST 2020
+2020-03-29 19:38:38.764  INFO 13440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-29 19:38:38.771  INFO 13440 --- [main] com.klay.community.CommunityApplication  : Started CommunityApplication in 6.352 seconds (JVM running for 10.268)
+2020-03-29 19:38:38.789  INFO 13440 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-29 19:38:39.140  INFO 13440 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-29 19:38:43.373  INFO 13440 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-29 19:38:43.374  INFO 13440 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-29 19:38:43.443  INFO 13440 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 68 ms
+2020-03-29 19:39:05.593  INFO 13440 --- [http-nio-8080-exec-7] c.k.community.provider.AliyunProvider    : 图片已成功上传:java.io.FileInputStream@447c4e3f
