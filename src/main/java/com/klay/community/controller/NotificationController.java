@@ -1,16 +1,13 @@
 package com.klay.community.controller;
 
 import com.klay.community.dto.NotificationDTO;
-import com.klay.community.dto.PaginationDTO;
 import com.klay.community.enums.NotificationTypeEnum;
 import com.klay.community.model.User;
 import com.klay.community.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
