@@ -11,7 +11,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-
 /**
  * @description:
  * @author: KlayHu
@@ -47,7 +46,7 @@ public class AliyunProvider {
         //objectMetadata.setContentType(fileName.substring(fileName.lastIndexOf(".")));
         ossClient.putObject("community-platform", objectName, inputStream);
 
-        Date expiration = new Date(System.currentTimeMillis() + 3600 * 1000);
+        Date expiration = new Date(System.currentTimeMillis() + 315360000);
 
         URL url = ossClient.generatePresignedUrl("community-platform", objectName, expiration);
 
