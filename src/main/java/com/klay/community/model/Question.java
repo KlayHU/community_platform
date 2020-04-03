@@ -41,7 +41,6 @@ public class Question implements Serializable{
     @Field(type = FieldType.Text, analyzer = "ik_max_word")
     private String description;
 
-
     public Long getId() {
         return id;
     }

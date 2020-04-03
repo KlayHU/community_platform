@@ -23,7 +23,7 @@ public class TagCache {
 
         TagDTO framework = new TagDTO();
         framework.setCategoryName("平台框架");
-        framework.setTags(Arrays.asList("laravel", "spring", "express", "django", "flask", "yii", "ruby-on-rails", "tornado", "koa", "struts"));
+        framework.setTags(Arrays.asList("mybatis", "spring", "elasticSearch", "django", "springboot", "yii", "ruby-on-rails", "tornado", "kafka", "struts"));
         tagDTOS.add(framework);
 
 
@@ -34,12 +34,12 @@ public class TagCache {
 
         TagDTO db = new TagDTO();
         db.setCategoryName("数据库");
-        db.setTags(Arrays.asList("mysql", "redis", "mongodb", "sql", "oracle", "nosql memcached", "sqlserver", "postgresql", "sqlite"));
+        db.setTags(Arrays.asList("mysql", "redis", "mongodb", "sql", "oracle", "nosql memcached", "sqlserver", "postgresql", "SQLite"));
         tagDTOS.add(db);
 
         TagDTO tool = new TagDTO();
         tool.setCategoryName("开发工具");
-        tool.setTags(Arrays.asList("git", "github", "visual-studio-code", "vim", "sublime-text", "xcode intellij-idea", "eclipse", "maven", "ide", "svn", "visual-studio", "atom emacs", "textmate", "hg"));
+        tool.setTags(Arrays.asList("git", "idea", "visual-studio-code", "vim", "sublime-text", "xcode intellij-idea", "eclipse", "maven", "svn", "visual-studio", "atom emacs", "textmate", "hg"));
         tagDTOS.add(tool);
         return tagDTOS;
     }

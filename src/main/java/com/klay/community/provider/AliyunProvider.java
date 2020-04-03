@@ -33,10 +33,10 @@ public class AliyunProvider {
 //            return null;
 //        }
 
-        String endpoint = "http://oss-cn-beijing.aliyuncs.com";
+        String endpoint = "";
         //RAM子账号
-        String accessKeyId = "LTAI4FvegE4eKucgXMMJVNmZ";
-        String accessKeySecret = "ZFZEuTRsdEccH2vzEnehpXnn2xNgK0";
+        String accessKeyId = "";
+        String accessKeySecret = "";
 
         // 创建OSSClient实例。
         OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
@@ -44,11 +44,11 @@ public class AliyunProvider {
 //        ObjectMetadata objectMetadata = new ObjectMetadata();
 //        objectMetadata.setContentDisposition("attachment;");
         //objectMetadata.setContentType(fileName.substring(fileName.lastIndexOf(".")));
-        ossClient.putObject("community-platform", objectName, inputStream);
+        ossClient.putObject("", objectName, inputStream);
 
         Date expiration = new Date(System.currentTimeMillis() + 315360000);
 
-        URL url = ossClient.generatePresignedUrl("community-platform", objectName, expiration);
+        URL url = ossClient.generatePresignedUrl("", objectName, expiration);
 
         log.info("图片已成功上传:" + inputStream.toString());
         // 关闭OSSClient

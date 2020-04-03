@@ -1,7 +1,7 @@
 package com.klay.community.test;
 
 import com.klay.community.CommunityApplication;
-import com.klay.community.model.Question;
+import com.klay.community.elasticSearch.QuestionRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,8 @@ public class EsTest {
 
     @Autowired
     private ElasticsearchRestTemplate elasticsearchRestTemplate;
-
+    @Autowired
+    private QuestionRepository questionRepository;
     /**
      * @Description: 创建索引，es会根据Question类的@Document注解信息来创建
      * @Author: KlayHu
@@ -28,7 +29,15 @@ public class EsTest {
      **/
 
     @Test
-    public void testCreateIndex() {
-        elasticsearchRestTemplate.createIndex(Question.class);
+    public void insert() {
+
+//        Item item = new Item();
+//        item.setId(1L);
+//        item.setTitle("手机");
+//        item.setBrand("小米");
+//        item.setCategory("米6s");
+//        item.setPrice(3499.00);
+//        item.setImages("http://image.baidu.com/13123.jpg");
+//        questionRepository.save(item);
     }
 }
